@@ -515,61 +515,51 @@ ease:"power3.out"
 // Counter Animation
 //==================================================
 
-document.querySelectorAll(".stat h2,.hero-stats h2").forEach(counter=>{
+document.querySelectorAll(".stat h2, .hero-stats h2").forEach(counter => {
 
-const original=counter.innerText;
+    const original = counter.innerText.trim();
 
-const value=parseInt(original.replace(/\D/g,""));
+    // Skip values like 24/7
+    if (original.includes("/")) return;
 
-if(isNaN(value)) return;
+    const value = parseInt(original.replace(/[^\d]/g, ""));
 
-ScrollTrigger.create({
+    if (isNaN(value)) return;
 
-trigger:counter,
+    ScrollTrigger.create({
+        trigger: counter,
+        start: "top 85%",
+        once: true,
 
-start:"top 85%",
+        onEnter: () => {
 
-once:true,
+            let obj = { val: 0 };
 
-onEnter:()=>{
+            gsap.to(obj, {
 
-let obj={val:0};
+                val: value,
+                duration: 2,
+                ease: "power2.out",
 
-gsap.to(obj,{
+                onUpdate: () => {
 
-val:value,
+                    if (original.includes("%")) {
 
-duration:2,
+                        counter.innerText = Math.floor(obj.val) + "%";
 
-ease:"power2.out",
+                    } else if (original.includes("+")) {
 
-onUpdate:()=>{
+                        counter.innerText = Math.floor(obj.val) + "+";
 
-if(original.includes("%")){
+                    }
 
-counter.innerText=Math.floor(obj.val)+"%";
+                }
 
-}
+            });
 
-else if(original.includes("+")){
+        }
 
-counter.innerText=Math.floor(obj.val)+"+";
-
-}
-
-else{
-
-counter.innerText=Math.floor(obj.val);
-
-}
-
-}
-
-});
-
-}
-
-});
+    });
 
 });
 

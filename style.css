@@ -2,8 +2,13 @@
 EduNova Lanka
 Premium Landing Page
 ==================================================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700;800&display=swap');
+.stat h2{
+    font-size:56px;
+    font-family: Arial, sans-serif;
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:10px;
+}
 
 :root{
 
@@ -2039,3 +2044,11 @@ nav li:last-child a{
 /*=========================================
 End
 =========================================*/
+
+.stat h2{
+    font-size:56px;
+    font-family: Arial, sans-serif;
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:10px;
+}
