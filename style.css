@@ -1997,6 +1997,45 @@ nav li:last-child a{
 }
 
 
+.contact-social{
+    position:relative;
+    z-index:2;
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.contact-social span{
+    color:#9FB0CF;
+    font-size:15px;
+}
+
+.instagram-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 22px;
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
+    font-weight:600;
+}
+
+.instagram-link i{
+    font-size:22px;
+    color:#E1306C;
+}
+
+.instagram-link:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.1);
+    box-shadow:0 12px 30px rgba(225,48,108,.25);
+}
+
 /*=========================================
 End
 =========================================*/
