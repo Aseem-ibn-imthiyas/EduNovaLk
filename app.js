@@ -747,3 +747,29 @@ console.log(
 "color:#8B5CF6;font-size:14px"
 
 );
+
+
+const menuBtn = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+menuBtn.addEventListener("click", () => {
+
+    nav.classList.toggle("active");
+
+    menuBtn.innerHTML = nav.classList.contains("active")
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll("nav a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        nav.classList.remove("active");
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+});
